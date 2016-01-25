@@ -20,7 +20,7 @@ public class ActivityHiveMain {
 
 // Queries are expressed in HiveQL.
         System.out.println("Output of table query");
-        Row[] results = sqlContext.sql("FROM src SELECT key, value").collect();               g
+        Row[] results = sqlContext.sql("FROM src SELECT key, value").collect();
         for (Row row : results) {
             System.out.println(row.toString());
         }
