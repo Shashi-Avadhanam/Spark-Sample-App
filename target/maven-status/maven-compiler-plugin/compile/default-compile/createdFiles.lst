@@ -5,4 +5,5 @@ SparkMLApp/Activity/ActivitySQLMain.class
 SparkMLApp/Activity/ActivityStreamingMain.class
 SparkMLApp/Activity/Activity.class
 SparkMLApp/Activity/ActivityMain.class
+SparkMLApp/Activity/ActivityHiveMain.class
 SparkMLApp/Activity/ActivityKafkaProducer.class
