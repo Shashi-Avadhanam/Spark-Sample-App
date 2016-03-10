@@ -58,7 +58,7 @@ public void setZaxis(double zaxis) {
 	this.zaxis = zaxis;
 }
 
-private Activity(String user, String activity, String timestamp, double xaxis,
+public Activity(String user, String activity, String timestamp, double xaxis,
 		double yaxis, double zaxis) {
 	this.user = user;
 	this.activity = activity;

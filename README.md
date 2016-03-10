@@ -40,3 +40,12 @@ run spark kafka streaming example
 spark-submit --class "SparkMLApp.Activity.ActivityKafkaStreamingMain" --jars /usr/local/Cellar/kafka/0.8.2.2/libexec/core/build/libs/kafka_2.10-0.8.2.2.jar,/Users/shashi/.m2/repository/org/apache/spark/spark-streaming-kafka-assembly_2.10/1.6.0/spark-streaming-kafka-assembly_2.10-1.6.0.jar --master local[2] /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar 
 ```
 
+Apache beam example (Google cloud dataflow API with Spark engine)
+```
+spark-submit \
+  --class SparkMLApp.Activity.ActivityGoogleDataflowMain \
+  --master local \
+  --jars $(echo /Users/shashi/code/SparkMLApp/target/lib/*.jar | tr ' ' ',') \
+  /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar \
+    --inputFile=/Users/shashi/code/SparkMLApp/data/data2.csv  --output=/tmp/out --runner=SparkPipelineRunner --sparkMaster=local
+```

@@ -48,6 +48,17 @@
             <artifactId>spark-avro_2.10</artifactId>
             <version>2.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.cloudera.dataflow.spark</groupId>
+            <artifactId>spark-dataflow</artifactId>
+            <version>0.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud.dataflow</groupId>
+            <artifactId>google-cloud-dataflow-java-sdk-all</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
     </dependencies>
         <build>
             <sourceDirectory>src</sourceDirectory>
@@ -58,6 +69,56 @@
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>target/lib/</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>copy-installed</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>copy</goal>
+                            </goals>
+                            <configuration>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>${project.groupId}</groupId>
+                                        <artifactId>${project.artifactId}</artifactId>
+                                        <version>${project.version}</version>
+                                        <type>${project.packaging}</type>
+                                    </artifactItem>
+                                </artifactItems>
+                                <outputDirectory>target/lib/</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.4.0</version>
+                    <configuration>
+                        <executable>java</executable>
+                        <classpathScope>test</classpathScope> <!-- include provided deps -->
+                        <arguments>
+                            <argument>-classpath</argument>
+                            <classpath />
+                            <argument>${mainClass}</argument>
+                            <argument>--inputFile=${input}</argument>
+                            <argument>--output=${output}</argument>
+                            <argument>--runner=${runner}</argument>
+                            <argument>--sparkMaster=${sparkMaster}</argument>
+                        </arguments>
                     </configuration>
                 </plugin>
             </plugins>
