@@ -1,9 +1,5 @@
 package SparkMLApp.Activity;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -14,10 +10,19 @@ import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaPairReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.kafka.KafkaUtils;
-
 import scala.Tuple2;
 
-public class ActivityKafkaStreamingMain {
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ *
+ */
+
+public class ProcessingTimeWindowPattern {
 
 	  private static Function2<Double, Double, Double> SUM_REDUCER = (a, b) -> a + b;
 	 private static final Duration WINDOW_LENGTH = new Duration(30 * 1000);

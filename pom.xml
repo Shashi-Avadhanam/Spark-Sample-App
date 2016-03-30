@@ -58,7 +58,6 @@
             <artifactId>google-cloud-dataflow-java-sdk-all</artifactId>
             <version>1.4.0</version>
         </dependency>
-
     </dependencies>
         <build>
             <sourceDirectory>src</sourceDirectory>
