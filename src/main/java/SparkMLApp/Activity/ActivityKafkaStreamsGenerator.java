@@ -10,6 +10,15 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ * zkserver start
+ kafka-server-start.sh /usr/local/etc/kafka/server.properties
+ java -classpath $(echo /Users/shashi/code/SparkMLApp/target/lib/*.jar /Users/shashi/code/SparkMLApp/target/*.jar /usr/local/Cellar/kafka/0.8.2.2/libexec/core/build/dependant-libs-2.10.4/* | tr ' ' ':') SparkMLApp.Activity.ActivityKafkaStreamsGenerator
+ */
+
 public class ActivityKafkaStreamsGenerator {
 	
 	  public static void main(String[] args) throws IOException, InterruptedException 

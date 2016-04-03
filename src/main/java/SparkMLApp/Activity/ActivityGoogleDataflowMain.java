@@ -11,6 +11,16 @@ import com.google.cloud.dataflow.sdk.values.TypeDescriptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ * spark-submit \
+ --class SparkMLApp.Activity.ActivityGoogleDataflowMain \
+ --master local \
+ --jars $(echo /Users/shashi/code/SparkMLApp/target/lib/*.jar | tr ' ' ',') \
+ /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar \
+ --inputFile=/Users/shashi/code/SparkMLApp/data/data2.csv  --output=/tmp/out --runner=SparkPipelineRunner --sparkMaster=local
+ */
 
 public class ActivityGoogleDataflowMain {
 

@@ -1,20 +1,29 @@
 package SparkMLApp.Activity;
 
-import scala.Tuple2;
-//import java.util.Comparator;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
+import com.google.common.base.Optional;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.*;
-//import org.apache.spark.api.java.function.PairFunction;
-//import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.streaming.Duration;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-import com.google.common.base.Optional;
+import scala.Tuple2;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+
+//import java.util.Comparator;
+//import org.apache.spark.api.java.function.PairFunction;
+//import org.apache.spark.api.java.function.Function2;
+
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ * spark-submit --class "SparkMLApp.Activity.ActivityStreamingMain" --master local /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar /Users/shashi/code/SparkMLApp/data
+ */
 
 public class ActivityStreamingMain {
 

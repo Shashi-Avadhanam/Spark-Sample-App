@@ -8,6 +8,15 @@ import scala.Tuple2;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ * spark-submit \
+ --class "SparkMLApp.Activity.ActivityMain" \
+ --master local \
+ /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar /Users/shashi/code/SparkMLApp/data/data2.csv
+ */
+
 public class ActivityMain {
   private static Function2<Double, Double, Double> SUM_REDUCER = (a, b) -> a + b;
 

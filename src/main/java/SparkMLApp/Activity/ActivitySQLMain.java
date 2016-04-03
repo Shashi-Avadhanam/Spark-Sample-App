@@ -6,6 +6,12 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.DataFrame;
 import org.apache.spark.sql.SQLContext;
 
+/**
+ * Created by shashi on 25/01/16.
+ * usage:
+ * spark-submit --class "SparkMLApp.Activity.ActivitySQLMain" --master local /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar /Users/shashi/code/SparkMLApp/data/data2.csv
+ */
+
 public class ActivitySQLMain {
 
 

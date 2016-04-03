@@ -19,7 +19,9 @@ import java.util.Map;
 /**
  * Created by shashi on 25/01/16.
  * usage:
- *
+ * noglob spark-submit --class "SparkMLApp.Activity.ProcessingTimeWindowPattern" \
+ --jars /usr/local/Cellar/kafka/0.8.2.2/libexec/core/build/libs/kafka_2.10-0.8.2.2.jar,/Users/shashi/.m2/repository/org/apache/spark/spark-streaming-kafka-assembly_2.10/1.6.0/spark-streaming-kafka-assembly_2.10-1.6.0.jar \
+ --master local[2] /Users/shashi/code/SparkMLApp/target/SparkMLAppl-1.0-SNAPSHOT.jar
  */
 
 public class ProcessingTimeWindowPattern {
